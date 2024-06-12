@@ -273,7 +273,7 @@ img {
 
 .home-blob {
   margin-left: 1rem;
-  width: 400px;
+  width: 280px;
   fill: var(--primeira-cor);
 }
 
@@ -354,16 +354,23 @@ img {
   align-items: center;
 }
 
-
-
 /*==================== ABOUT ====================*/
+
 .container-img-sobre {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
  
 }
+
+.sobre-img {
+  margin: 0 auto;
+  justify-self: center;
+  align-self: center;  
+  min-width: 100%;
+  animation: floating 4s ease-in-out infinite;
+}
+  
 
 @keyframes floating {
   0% {
@@ -378,15 +385,17 @@ img {
 }
 
 
-.efeito {
+.sobre-efeito {
+  margin-bottom: var(--mb-2);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-self: center;
+  align-self: center;
   position: relative;
-  width: 85%;
+  max-width: 100% ;
   height: 500px;
   z-index: -1000;
 }
+
 
 .square {
   position: absolute;
@@ -413,6 +422,209 @@ img {
     transfrom: scale(1);
   }
 }
+
+
+.square.color-segund {
+  color: var(--primeira-cor-lighter);
+  animation:   color-segund 1s;
+  animation-timing-function: cubic-bezier(.5, 2.5, .5, 1);
+}
+
+@keyframes color-segund {
+  0% { 
+    transform: scale(0);
+  }
+  50% {
+    background-color: var(--primeira-cor);
+  }
+  100%{
+    transfrom: scale(1);
+  }
+}
+
+.sobre-img {
+  margin: 0 auto;
+  justify-self: center;
+  align-self: center;  
+  animation: floating 4s ease-in-out infinite;
+  align-items: center;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+}
+
+.sobre-efeito {
+  margin-bottom: var(--mb-2);
+}
+.efeito {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 90% ;
+  width: 85%;
+  height: 500px;
+  z-index: -1000;
+}
+
+
+.square {
+  position: absolute;
+  background-color: var(--primeira-cor);
+}
+
+.sobre-description {
+  margin-top: var(--mb-2-5);
+  margin-bottom: var(--mb-2-5);
+  text-align: center;
+}
+
+.sobre-info {
+  margin-bottom: var(--mb-2-5);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/*==================== ABOUT ====================*/
+
+.sobre-info-name {
+  font-size: var(--smaller-font-size);
+}
+
+.sobre-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+/*==================== SKILLS ====================*/
+.skills-container{
+  row-gap: 0;
+}
+
+.skills-header.skills.open {
+  background-color: #e0e0e0;
+}
+
+.skills-header{
+  margin-top: var(--mb-2-5);
+  margin-bottom: var(--mb-2-5);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: .6rem;
+  border: 1px solid #e8e8e8;
+  transition: var(--primeira-cor-lighter) 0.3s ease;
+}
+
+.skills-icone,
+.skills-arrow{
+  font-size: 1.8rem;
+  color: var(--primeira-cor);
+}
+
+.skills-icon {
+  margin-top: .5rem;
+  font-size: 1.3rem;
+  color: var(--primeira-cor);
+}
+
+.skills-icone {
+  margin-right: var(--mb-0-75);
+}
+
+.skills-title {
+  font-size:  var(--h3-font-size);
+}
+
+.skills-subtitle {
+  font-size: var(--small-font-size);
+  color: var(--primeira-cor-lighter);
+}
+
+.skills-arrow {
+  margin-left: auto ;
+  transition: .4s;
+}
+
+.skills-titles{
+  margin-bottom: var(--mb-0-5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.skills-bar,
+.skills-porcentage{
+  height: 5px;
+  border-radius: .25rem;
+
+}
+
+.skills-bar {
+  background-color: var(--primeira-cor-lighter);
+}
+
+.skills-porcentage {
+  display: block;
+  background-color: var(--primeira-cor);
+}
+
+.skills-html {
+  width: 99%;
+}
+
+.skills-css {
+  width: 80%;
+}
+
+.skills-js, .skills-figma {
+  width: 50%;
+}
+
+.skills-react, .skills-node {
+  width: 20%;
+}
+
+.skills-git {
+  width: 70%;
+}
+
+.skills-postgre, .skills-ui {
+  width: 30%;
+}
+
+.skills-npm, .skills-ux {
+  width: 40%;
+}
+
+
+.skills-close .skills-list {
+  height: 0;
+  overflow: hidden;
+  transition:  0.3s ease;
+}
+ 
+.skills-open .skills-list {
+  margin-bottom: var(--mb-2-5) ;
+  height: max-content;
+  transition:  .5s ease; 
+}  
+.skills-open .skills-arrow   {
+  max-height: 1000px;
+  transition:  .5s ease; 
+ transform: rotate(-180deg);
+}
+
 
 /*==================== SKILLS ====================*/
 

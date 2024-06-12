@@ -27,7 +27,28 @@ function linkAction() {
 navLink.forEach(item => item.addEventListener('click', linkAction));
 
 /*==================== ACCORDION SKILLS ====================*/
+const content = document.getElementsByClassName('skills-content');
+const header = document.querySelectorAll('.skills-header');
+const open = 'skills-open', close = 'skills-close';
+const arrows = document.querySelectorAll('.kills-arrow');
 
+function skillsAction() {
+  const item = this.parentNode;
+
+  console.log(item)
+  // Remover a classe 'skills-open' de todos os elementos
+  for (let i = 0; i < content.length; i++) {
+    content[i].classList.remove(open);
+  }
+
+  if (item.classList.contains(open)) {
+    item.classList.toggle(close);
+  } else if( item.classList.contains(close)) {
+    item.classList.add(open);
+  }
+
+}
+header.forEach((item) => item.addEventListener('click', skillsAction));
 
 /*==================== QUALIFICATION TABS ====================*/
 

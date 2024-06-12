@@ -118,4 +118,4 @@ function initAnimationEfects() {
     }
   }
 }
-export default initAnimationEfects;;
+export default initAnimationEfects;
