@@ -360,7 +360,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  
 }
 
 .sobre-img {
@@ -371,19 +371,17 @@ img {
   animation: floating 4s ease-in-out infinite;
 }
   
-
 @keyframes floating {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   100% {
     transform: translateY(0);
   }
 }
-
 
 .sobre-efeito {
   margin-bottom: var(--mb-2);
@@ -395,7 +393,6 @@ img {
   height: 500px;
   z-index: -1000;
 }
-
 
 .square {
   position: absolute;
@@ -423,7 +420,6 @@ img {
   }
 }
 
-
 .square.color-segund {
   color: var(--primeira-cor-lighter);
   animation:   color-segund 1s;
@@ -442,23 +438,6 @@ img {
   }
 }
 
-.sobre-img {
-  margin: 0 auto;
-  justify-self: center;
-  align-self: center;  
-  animation: floating 4s ease-in-out infinite;
-  align-items: center;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0);
-  }
-}
-
-.sobre-efeito {
-  margin-bottom: var(--mb-2);
-}
 .efeito {
   display: flex;
   justify-self: center;
@@ -490,7 +469,7 @@ img {
   justify-content: space-evenly;
   align-items: center;
 }
-/*==================== ABOUT ====================*/
+
 
 .sobre-info-name {
   font-size: var(--smaller-font-size);
@@ -607,7 +586,6 @@ img {
   width: 40%;
 }
 
-
 .skills-close .skills-list {
   height: 0;
   overflow: hidden;
@@ -625,11 +603,81 @@ img {
  transform: rotate(-180deg);
 }
 
-
-/*==================== SKILLS ====================*/
-
-
 /*==================== QUALIFICATION ====================*/
+
+.qualification-tabs {
+  margin-bottom: var(--mb-2) ;
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.qualification-button {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.qualification-button:hover {
+  color: var(--primeira-cor);
+}
+
+.qualification-icone {
+  margin-right: var(--mb-0-5);
+  font-size: 1.8rem;
+}
+
+.qualification-data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  justify-self: center;
+  align-self: center;
+  column-gap: 1.5rem;
+}
+
+.qualification-title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.qualification-sutitle {
+  margin-bottom: var(--mb-1);
+  display: inline-block;
+  font-size: var(--small-font-size);
+}
+
+.qualification-calender {
+  margin-bottom: var(--mb-1);
+  font-size: var(--smaller-font-size);
+  color: var(--primeira-cor-lighter);
+}
+
+.qualification-rounder {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--primeira-cor);
+  border-radius: 50%; 
+}
+
+.qualification-line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--primeira-cor);
+  transform: translate(6px, -7px);
+}
+
+.qualification [data-content] {
+  display: none;
+}
+
+[data-content].qualification-active  {
+  display: block; 
+}
+
+.qualification-active.qualification-button{
+  color: var(--primeira-cor);
+}
 
 
 /*==================== SERVICES ====================*/

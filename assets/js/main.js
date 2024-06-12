@@ -30,7 +30,6 @@ navLink.forEach(item => item.addEventListener('click', linkAction));
 const content = document.getElementsByClassName('skills-content');
 const header = document.querySelectorAll('.skills-header');
 const open = 'skills-open', close = 'skills-close';
-const arrows = document.querySelectorAll('.kills-arrow');
 
 function skillsAction() {
   const item = this.parentNode;
@@ -51,6 +50,45 @@ function skillsAction() {
 header.forEach((item) => item.addEventListener('click', skillsAction));
 
 /*==================== QUALIFICATION TABS ====================*/
+
+
+const tabs = document.querySelectorAll('[data-target]');
+const tabContents = document.querySelectorAll('[data-content]');
+const tabButtons = document.querySelectorAll('.qualification-button');
+const activeTab = 'qualification-active'
+
+tabs.forEach((tab) =>{
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.target)
+
+    tabContents.forEach((tabContent) => {
+      tabContent.classList.remove(activeTab) 
+    })
+    target.classList.add(activeTab)
+    tab.forEach((tab) => { 
+      tab.classList.remove(activeTab) 
+    });
+    tab.classList.add(activeTab)
+  })
+})
+
+tabButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Remover a classe 'qualification-active' de todos os botões
+    tabButtons.forEach((btn) => {
+      btn.classList.toggle(activeTab);
+      btn.style.backgroundColor = 'white'; // Cor de fundo padrão
+      btn.style.color = '#232529';
+    });
+
+    // Adicionar a classe 'qualification-active' ao botão clicado
+    button.classList.add(activeTab);
+
+    // Alterar a cor do texto
+    button.style.color = 'var(--primeira-cor)';
+  });
+});
+
 
 
 /*==================== SERVICES MODAL ====================*/
