@@ -1,12 +1,15 @@
-function initAnimationEfects() {
+function initAnimationEffects() {
   const container = document.querySelector('.efeito');
 
+  // cria o tamanho do quadrados aleatoriamente usando: Math.floor e Math.random
   function getRandomIntBetween(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  // Usa o método de Box-Muller para gerar dois números aleatórios uniformemente distribuídos e calcula o valor gaussiano. 
+  //resultado é usado para posicionar os quadrados aleatoriamente na tela.
   function randomGaussian(mean, stdDev) {
     let x1, x2, w;
     do {
@@ -16,9 +19,16 @@ function initAnimationEfects() {
     } while (w >= 1);
 
     w = Math.sqrt((-2 * Math.log(w)) / w);
-
     return mean + stdDev * x1 * w;
   }
+
+  /* 
+  Cria um elemento <div> para representar um quadrado.
+  Define a posição (top e left) aleatoriamente usando a função randomGaussian.
+  Define o tamanho do quadrado aleatoriamente.
+  Define a cor do quadrado (primária ou secundária) e aplica um filtro de desfoque com base no tamanho.
+  Insere o quadrado no contêiner (.efeito) de forma ordenada com base no tamanho.
+*/
 
   function createSquare() {
     const square = document.createElement('div');
@@ -51,21 +61,24 @@ function initAnimationEfects() {
 
     square.addEventListener('animationend', handleAppearAnimation, { once: true });
   }
+   setInterval(createSquare, 125);
 
-  const squareInterval = setInterval(() => {
-    createSquare();
-  }, 125);
-
+/* 
+  Manipula o evento de animação de aparecimento quando um quadrado é criado.
+  Calcula velocidades aleatórias para o movimento do quadrado.
+  Cria uma animação infinita de deslocamento do quadrado usando translate.
+  Após um intervalo de tempo, inicia uma animação de desaparecimento (escala para zero) e remove o quadrado. 
+*/
   function handleAppearAnimation(e) {
     const square = e.target;
 
-    const xvelocity = (Math.random() - 5.0) * 2;
-    const yvelocity = (Math.random() - 5.0) * 2;
+    const xvelocity = (Math.random() - 0.5) * 10;
+    const yvelocity = (Math.random() - 0.5) * 10;
 
-    const animation = square.animate(
+    square.animate(
       [
-        { transform: 'translateX(0, 0)' },
-        { transform: `translateX(${xvelocity * 1000}%, ${yvelocity * 1000}%)` },
+        { transform: 'translate(0, 0)' },
+        { transform: `translate(${xvelocity}%, ${yvelocity}%)` },
       ],
       {
         duration: 1000,
@@ -75,7 +88,7 @@ function initAnimationEfects() {
 
     setTimeout(() => {
       const { x, y } = getTranslateValues(square);
-      const test = square.animate(
+      square.animate(
         [
           { transform: `matrix(1, 0, 0, 1, ${x}, ${y})` },
           { transform: `matrix(0, 0, 0, 0, ${x}, ${y})` },
@@ -83,14 +96,19 @@ function initAnimationEfects() {
         {
           duration: 250,
         }
-      );
-      test.finished.then(() => square.remove());
+      ).finished.then(() => square.remove());
     }, 3125);
   }
 
+
+  /*
+  Obtém os valores de translação (x, y, z) de um elemento.
+  Analisa a matriz de transformação CSS (obtida de window.getComputedStyle) para extrair os valores.
+  Lida com matrizes 2D e 3D, retornando um objeto com as coordenadas x, y e z.
+  */
   function getTranslateValues(element) {
     const style = window.getComputedStyle(element);
-    const matrix = style['transform'] || style.webkitTransform || style.mozTransform;
+    const matrix = style.transform || style.webkitTransform || style.mozTransform;
 
     if (matrix === 'none' || typeof matrix === 'undefined') {
       return {
@@ -104,18 +122,19 @@ function initAnimationEfects() {
     const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
     if (matrixType === '2d') {
       return {
-        x: matrixValues[4],
-        y: matrixValues[5],
+        x: parseFloat(matrixValues[4]),
+        y: parseFloat(matrixValues[5]),
         z: 0,
       };
     }
     if (matrixType === '3d') {
       return {
-        x: matrixValues[12],
-        y: matrixValues[13],
-        z: matrixValues[14],
+        x: parseFloat(matrixValues[12]),
+        y: parseFloat(matrixValues[13]),
+        z: parseFloat(matrixValues[14]),
       };
     }
   }
 }
-export default initAnimationEfects;
+
+export default initAnimationEffects;
