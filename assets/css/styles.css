@@ -358,6 +358,7 @@ img {
   padding: .75rem 1rem;
 }
 
+
 .button--link {
   padding: 0;
   background-color: transparent;
@@ -795,6 +796,75 @@ img {
 }
 
 /*==================== PORTFOLIO ====================*/
+
+.portfolio-container {
+  overflow: initial;
+}
+
+.portfolio-content {
+  padding: 0 1.5rem;
+}
+
+.portfolio-img{
+  width: 270px;
+  opacity: .8;
+  border-radius:  .5rem;
+  justify-self: center;
+  transition: .3s ease-in;
+}
+
+.portfolio-img:hover{
+  opacity: 1;
+}
+
+
+.portfolio-title {
+  margin-bottom: var(--mb-0-5);
+  font-size: var(--h3-font-size);
+}
+
+.portfolio-description {
+  margin-bottom: var(--mb-0-75);
+}
+
+.portfolio-button:hover .button-icone {
+  transform: translateX(.25rem);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+}
+
+
+.swiper-portfolio-icone {
+  font-size: 2rem;
+  color: var(--primeira-cor) ;
+}
+
+.swiper-container {
+  padding-bottom: 2.1rem;
+  overflow: hidden;
+ 
+}
+
+.swiper-button-prev {
+  left: -.5rem;
+}
+
+.swiper-button-next {
+  right: -.5rem;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: var(--primeira-cor);
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet{
+  outline: none;
+}
 
 
 /*==================== PROJECT IN MIND ====================*/

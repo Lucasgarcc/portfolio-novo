@@ -1,6 +1,7 @@
 
 import initAnimationEfects from "../js/animation.js";
 
+
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.querySelector('#nav-menu'),
     navToggle = document.querySelector('#nav-toggle'),
@@ -121,7 +122,22 @@ closeElements.forEach((modalClose) => {
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 
-
+const swiper = new Swiper('.portfolio-container', {
+  direction: 'horizontal',
+  loop: true,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  // And if we need scrollbar
+  hide: true,
+});
 /*==================== TESTIMONIAL ====================*/
 
 

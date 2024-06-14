@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +16,12 @@
       <div class="nav-menu" id="nav-menu">
         <ul class="nav-list grid">
           <li class="nav-item">
-            <a href="#menu" class="nav-link">
+            <a href="#home" class="nav-link">
               <i class="uil uil-estate nav-icone"></i>Inicio
             </a>
           </li>
           <li class="nav-item">
-            <a href="#about" class="nav-link">
+            <a href="#sobre" class="nav-link">
               <i class="uil uil-user nav-icone"></i>Sobre
             </a>
           </li>
@@ -405,7 +405,7 @@
 
         <div class="services-content"><!--Designer-->
           <div>
-            <i class="uil uil-arrow services-icone"></i>
+            <i class="uil uil-grid services-icone"></i>
             <h3 class="services-title">Ui / Ux  <br> Designer</h3>    
           </div>
         
@@ -420,19 +420,19 @@
               <ul class="services-modal-services grid">
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Eu desenvolvo a interface do usuário.</p>
+                  <p>Desenvolvo a interface do usuário.</p>
                 </li>
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Desenvolvimento de páginas web.</p>
+                  <p>Desenvolvimento de layouts modernos e intuitivos.</p>
                 </li>
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Eu crio interações de elementos ux.</p>
+                  <p>Crio interações de elementos <strong>UX.</strong></p>
                 </li>
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Construo a presença digital da sua empresa através de um site personalizado.</p>
+                  <p>Construo a presença digital da sua empresa por meio de um site personalizado.</p>
                 </li>
               </ul>
             </div>
@@ -456,7 +456,7 @@
               <ul class="services-modal-services grid">
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Eu desenvolvo a interface do usuário.</p>
+                  <p>Desenvolvo sites dinâmicos e interativos.</p>
                 </li>
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
@@ -464,11 +464,11 @@
                 </li>
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Eu crio interações de elementos ux.</p>
+                  <p>Crio interações de sites otmizados e com bom desempenho.</p>
                 </li>
                 <li class="services-modal-service">
                   <i class="uil uil-check services-modal-icone"></i>
-                  <p>Construo a presença digital da sua empresa através de um site personalizado.</p>
+                  <p>Construo  <strong>landing pages</strong>, site de <strong>negócios</strong>, <strong>pessoal</strong> e <strong> portfólio.</strong></p>
                 </li>
               </ul>
             </div>
@@ -476,8 +476,65 @@
         </div> 
       </div>
     </section>
+    <section class="portfolio section" id="portfolio">
+      <h2 class="section-title">Portfólio</h2>
+      <span class="section-subtitle">Meus projetos recentes</span>
+      <div class="portfolio-container container swiper-container" navigation="true" pagination="true" scrollbar="true">
+        <div class="swiper-wrapper">
+          <!--Port 1-->
+          <div class="portfolio-content grid swiper-slide">
+            <img src="assets/img/portfolio1.jpg" alt="" class="portfolio-img">
+            
+            <div class="portfolio-data">
+              <h3 class="portfolio-title">Site Moderno</h3>
+              <p class="portfolio-description">Bikcraft site adaptável a todos os dispositivos, com componentes de interface do usuário e interações animadas</p>
+            
+              <a href="https://bikcraft-garcia.netlify.app" class="button button--small  button--flex portfolio-button">
+                Demo
+                <i class="uil uil-arrow-right button-icone"></i>
+              </a> 
+            </div> 
+          </div>
+          <!--Port 2-->
+          <div class="portfolio-content grid swiper-slide">
+            <img src="assets/img/portfolio2.jpg" alt="" class="portfolio-img">
+
+            <div class="portfolio-data">
+              <h3 class="portfolio-title">Cardápio Online personalizado</h3>
+              <p class="portfolio-description">O cardápio digital possui uma interface inteligente que sugere pedidos aos clientes. Além disso, oferece um sistema de gestão integrado e conexões com o WhatsApp, tudo em um único lugar.</p>
+            
+              <a href="https://cardapio-online-garc.vercel.app/" class="button button--small  button--flex portfolio-button">
+                Demo
+                <i class="uil uil-arrow-right button-icone"></i>
+              </a> 
+            </div>
+          </div>
+           <!--Port 3-->
+           <div class="portfolio-content grid swiper-slide">
+            <img src="assets/img/portfolio3.jpg" alt="" class="portfolio-img">
+            <div class="portfolio-data">
+              <h3 class="portfolio-title">Em Andamento</h3>
+              <p class="portfolio-description">projeto futuro</p>
+              <a href="#" class="button button--small  button--flex portfolio-button">
+                Demo
+                <i class="uil uil-arrow-right button-icone"></i>
+              </a> 
+            </div>
+          </div>
+         
+          
+        </div>
+        <div class="swiper-button-next">
+          <i class="uil uil-angle-right-b swiper-portfolio-icone"></i>
+        </div>
+        <div class="swiper-button-prev">
+          <i class="uil uil-angle-left-b swiper-portfolio-icone"></i>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
   </main>
-  </nav>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
