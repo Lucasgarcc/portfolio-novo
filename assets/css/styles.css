@@ -917,10 +917,6 @@ img {
 }
 
 /*==================== TESTIMONIAL ====================*/
-.testimonial-container {
-  position: relative;
-  z-index: 1000;
-}
 
 .testimonial-area {
   position: absolute;
@@ -930,6 +926,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 20vh;
+  z-index: var(--z-fixed);
 }
 
 .testimonial-content {
