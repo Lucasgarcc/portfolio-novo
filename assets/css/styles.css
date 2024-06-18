@@ -927,6 +927,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 20vh;
+  z-index: 9999;
 }
 
 .testimonial-content {
