@@ -888,7 +888,6 @@ img {
 /*==================== PROJECT IN MIND ====================*/
 
 .project {
-  position: relative;
   text-align: center;
 }
 
@@ -968,7 +967,6 @@ img {
   border-color: var(--tertiary-color-light);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
   rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  z-index: 1000
 }
 
 .testimonial-modal-content {
@@ -1058,7 +1056,7 @@ input[type="text"] {
 }
 
 .testimonial-area.active-testimonial {
-  position: static; /* 'none' não é um valor válido para 'position' */
+  position: relative; /* 'none' não é um valor válido para 'position' */
 }
 
 
@@ -1084,12 +1082,6 @@ input[type="text"] {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
 }
-
-.hidden {
-  display: none;
-  overflow: hidden;
-}
-
 
 .testimonial-client {
   font-size: var(--small-font-size);
