@@ -888,6 +888,7 @@ img {
 /*==================== PROJECT IN MIND ====================*/
 
 .project {
+  position: relative;
   text-align: center;
 }
 
@@ -914,6 +915,7 @@ img {
   width: 200px;
   justify-self: center;
   filter: drop-shadow(1px 2px 20px var(--primeira-cor-lighter));
+  z-index: 10
 }
 
 /*==================== TESTIMONIAL ====================*/
@@ -966,6 +968,7 @@ img {
   border-color: var(--tertiary-color-light);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
   rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  z-index: 1000
 }
 
 .testimonial-modal-content {
