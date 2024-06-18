@@ -918,6 +918,9 @@ img {
 }
 
 /*==================== TESTIMONIAL ====================*/
+.testimonial {
+  z-index: 1;
+}
 
 .testimonial-area {
   position: absolute;
