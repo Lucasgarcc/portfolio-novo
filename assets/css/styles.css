@@ -266,10 +266,7 @@ img {
   opacity: 0.5;
 }
 
-#discord-icone {
-  fill: var(--primeira-cor); /* Cor inicial */ 
-  transition: all 0.5s;
-}
+
 
 .home-blob {
   margin-left: 1rem;
@@ -358,6 +355,15 @@ img {
   padding: .75rem 1rem;
 }
 
+.button-white {
+  background-color: #fff; 
+  color: var(--primeira-cor);
+}
+
+.button-white:hover {
+  background-color: var(--primeira-cor-lighter); 
+}
+
 
 .button--link {
   padding: 0;
@@ -374,6 +380,7 @@ img {
 /*==================== ABOUT ====================*/
 
 .container-img-sobre {
+  width: 473px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -813,10 +820,21 @@ img {
   transition: .3s ease-in;
 }
 
-.portfolio-img:hover{
-  opacity: 1;
+/* talvez remover */
+.preview {
+  transition: transform 0.5s ease;
 }
 
+/* talvez remover */
+.preview:hover{
+  transform: scale(1.3);
+  z-index: 1000; /* Ajuste o valor de escala conforme necessário */
+}
+
+.portfolio-img:hover{
+  opacity: 1;
+  z-index: 1000;
+}
 
 .portfolio-title {
   margin-bottom: var(--mb-0-5);
@@ -869,8 +887,245 @@ img {
 
 /*==================== PROJECT IN MIND ====================*/
 
+.project {
+  text-align: center;
+}
+
+.project-bg {
+  background-color: var(--primeira-cor-seg);
+}
+
+.project-title,
+.project-description{
+ color: #fff;
+}
+
+.project-title {
+  margin-bottom: var(--mb-0-75);
+  margin-top: var(--mb-2-5);
+  font-size: var(--h2-font-size);
+}
+
+.project-description {
+  margin-bottom: var(--mb-1-5);
+}
+
+.project-img {
+  width: 200px;
+  justify-self: center;
+  filter: drop-shadow(1px 2px 20px var(--primeira-cor-lighter));
+}
 
 /*==================== TESTIMONIAL ====================*/
+.testimonial-container {
+  position: relative;
+}
+
+
+.testimonial-area {
+  position: absolute;
+  inset: 0;
+  padding: 0 1rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  z-index: 1000;
+}
+
+.testimonial-content {
+  padding: 1rem;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+  transition: opacity 0.5s ease; /* Adiciona uma transição suave de opacidade */
+}
+
+.testimonial-content.active-testimonial {
+  opacity: 1;
+  overflow: visible;
+}
+
+.testimonial-content {
+  /* outras propriedades */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Adiciona múltiplas transições */
+}
+
+.testimonial-content.active-testimonial {
+  /* outras propriedades */
+  transform: translateX(0); /* Exemplo de transformação */
+}
+
+.testimonial-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;   
+  transition: .3s ease;
+  border-color: var(--tertiary-color-light);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
+  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  z-index: 20000;
+}
+
+.testimonial-modal-content {
+  padding: 5rem 2.5rem;
+  position: relative;
+  background-color: var(--container-cor);
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.testimonial-modal-title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  text-align: justify; 
+  align-self: flex-start;
+};
+
+
+
+.testimonial-modal-name{
+  margin-top: 1rem;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  text-align: justify; 
+  align-self: flex-start;
+};
+
+input[type="text"] {
+  font-size: 18pt;
+}
+.testimonial-modal-input{
+  width: 200px;
+  height: 35px;
+  border-radius: 3px;
+  border: 1.5px solid var(--primeira-cor-alt);
+  text-align: center;
+  align-self: flex-start;
+}
+
+.testimonial-modal-text-area {
+  width: 200px;
+  height: 100px;
+  border-radius: 3px;
+  border: 1.5px solid var(--primeira-cor-alt);
+  text-align: center;
+  align-self: flex-start;
+}
+
+.testimonial-modal.active-testimonial-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.testimonial-modal-icone {
+  margin-bottom: var(--mb-0-5);
+  font-size: 1.3rem;
+  color: var(--primeira-cor);
+}
+
+.testimonial-modal-close {
+  position: absolute;
+  inset: 1rem 1rem auto auto;
+  font-size: 1.7rem;
+  color: var(--primeira-cor);
+  cursor: pointer;
+}
+
+.testimonial-modal-button {
+  padding-right: 50px;
+  width: 95px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color:#fff;
+  text-align: center;
+  font-size: var(--font-medium);
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.button-icone-modal{
+  transition: .3s;
+}
+
+.testimonial-area.active-testimonial {
+  position: static; /* 'none' não é um valor válido para 'position' */
+}
+
+
+.testimonial-data,
+.testimonial-header {
+ display: flex;
+}
+
+.testimonial-data {
+  margin-bottom: var(--mb-1);
+  justify-content: space-between;
+}
+
+.testimonial-img{
+  margin-right: var(--mb-0-75);
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+}
+
+
+#imageDisplay img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.testimonial-name.active-modal {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.hidden {
+  display: none;
+  overflow: hidden;
+}
+
+
+.testimonial-client {
+  font-size: var(--small-font-size);
+  color: var(--texto-cor);
+}
+
+.testimonial-description {
+ margin-bottom: var(--mb-2-5);
+ width: 45ch;
+}
+
+.testimonial-icone-star{
+  color: var(--primeira-cor);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.active-star {
+  transform: scale(1.2);
+}
+
+.testimonial-icone-star.active-star {
+  /* ou a família de fontes apropriada */
+  color: rgb(255, 213, 0); /* Cor de preenchimento */
+}
 
 
 /*==================== CONTACT ME ====================*/

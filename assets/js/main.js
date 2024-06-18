@@ -122,7 +122,7 @@ closeElements.forEach((modalClose) => {
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 
-const swiper = new Swiper('.portfolio-container', {
+const swiperPortifolio= new Swiper('.portfolio-container', {
   direction: 'horizontal',
   loop: true,
   // If we need pagination
@@ -140,6 +140,116 @@ const swiper = new Swiper('.portfolio-container', {
 });
 /*==================== TESTIMONIAL ====================*/
 
+//Availability Stars 
+const starContainers = document.querySelectorAll('.star-content');
+
+starContainers.forEach((starContainer) => {
+  const stars = starContainer.querySelectorAll('.testimonial-icone-star');
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      
+
+     const nextStar = index === 0 || stars[index - 1].classList.contains('active-star');   
+    //Aqui, criamos uma variável booleana (true ou false) chamada nextStar. Ela será verdadeira se a  estrela clicada for a primeira (index === 0) ou se a estrela anterior (stars[index - 1]) tiver a classe ‘active-star’.
+
+      if (nextStar) {
+        star.classList.toggle('active-star')
+      
+        if (!star.classList.contains('active-star')){
+          for (let i = index  + 1; i < stars.length; i++) {
+          //Se a classe ‘active-star’ foi removida, usamos um loop for para iterar sobre todas as estrelas subsequentes à estrela clicada
+            stars[i].classList.remove('active-star');
+          }
+        }
+      }   
+    })
+  })
+});
+
+
+const testimonialContent = document.querySelectorAll('.testimonial-content');
+const testimonialArea = document.querySelector('.testimonial-area');
+const buttonTestimonial = document.querySelector('.button-send');
+
+function toggleTestimonials() {
+  // Alternar a classe 'active-testimonial' para a área e o conteúdo
+  testimonialArea.classList.add('active-testimonial');
+  if (testimonialArea.classList.contains('active-testimonial')) {
+      testimonialArea.classList.add('active-testimonial');
+    } else {
+      testimonialArea.classList.remove('active-testimonial');
+    }
+  testimonialContent.forEach((content) => {
+    if (testimonialArea.classList.contains('active-testimonial')) {
+      content.classList.add('active-testimonial');
+    } else {
+      content.classList.remove('active-testimonial');
+    }
+  });
+}
+
+
+buttonTestimonial.addEventListener('click', toggleTestimonials);
+
+
+
+// Código para o modal
+const input = document.querySelector('.testimonial-modal-input');
+const buttonModal = document.querySelector('.testimonial-area-button');
+const buttonClose = document.querySelector('.testimonial-modal-close');
+const modalTestimonial = document.querySelector('.testimonial-modal');
+const buttonInit = document.querySelector('#sendButton');
+const contentTestimonial = document.querySelector('.testimonial-content');
+
+
+function showModal() {
+  modalTestimonial.classList.add('active-testimonial-modal');
+}
+
+function closeModal() {
+  modalTestimonial.classList.remove('active-testimonial-modal');
+
+}
+
+function openModal() {
+  contentTestimonial.classList.add('hidden');
+  // Código para abrir o modal
+}
+
+function message(event) {
+  event.preventDefault(); 
+  let text = input.value; // Pegar o valor do texto do campo de entrada
+  const messageDisplay = document.querySelector('.testimonial-name');
+  console.log(messageDisplay);
+  messageDisplay.style.fontSize = '1.9rem';
+  messageDisplay.style.color = 'var(--primary-color)'; // Selecionar a tag alvo
+  messageDisplay.textContent = text; 
+  input.value= '';
+  console.log(text);
+  modalTestimonial.classList.remove('active-testimonial-modal'); // Corrigido para usar 'modalTestimonial'
+}
+
+buttonInit.addEventListener('click', message);
+buttonModal.addEventListener('click',
+showModal)
+buttonClose.addEventListener('click', closeModal);
+buttonInit.addEventListener('click', closeModal);
+
+
+
+
+var swiperTestimonial = new Swiper(".testimonial-container", {
+  irection: 'horizontal',
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
