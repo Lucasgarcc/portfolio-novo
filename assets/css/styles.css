@@ -927,7 +927,6 @@ img {
   justify-content: center;
   align-items: center;
   height: 20vh;
-  z-index: var(--z-fixed);
 }
 
 .testimonial-content {
@@ -960,13 +959,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: var(--z-modal);
+  z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: .3s;
   border-color: var(--tertiary-color-light);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
   rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  z-index: 1000
 }
 
 .testimonial-modal-content {
@@ -1056,7 +1056,7 @@ input[type="text"] {
 }
 
 .testimonial-area.active-testimonial {
-  position: relative; /* 'none' não é um valor válido para 'position' */
+  position: static; /* 'none' não é um valor válido para 'position' */
 }
 
 
