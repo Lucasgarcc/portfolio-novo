@@ -919,6 +919,7 @@ img {
 /*==================== TESTIMONIAL ====================*/
 .testimonial-container {
   position: relative;
+  z-index: 1000;
 }
 
 .testimonial-area {
@@ -936,7 +937,7 @@ img {
   padding: 1rem;
   opacity: 0;
   overflow: hidden;
-  z-index: -1000;
+  z-index: 1000;
   transition: opacity 0.5s ease; /* Adiciona uma transição suave de opacidade */
 }
 
