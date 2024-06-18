@@ -114,6 +114,45 @@ closeElements.forEach((modalClose) => {
   });
 });
 
+
+
+
+
+
+
+/*==================== PORTFOLIO SWIPER  ====================*/
+
+const swiperPortifolio= new Swiper('.portfolio-container', {
+  direction: 'horizontal',
+  loop: true,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  // And if we need scrollbar
+  hide: true,
+});
+/*==================== TESTIMONIAL ====================*/
+
+var swiperTestimonial = new Swiper(".testimonial-container", {
+  irection: 'horizontal',
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
 
