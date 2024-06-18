@@ -380,7 +380,7 @@ img {
 /*==================== ABOUT ====================*/
 
 .container-img-sobre {
-  width: 473px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1082,12 +1082,6 @@ input[type="text"] {
  width: 60px;
  height: 60px;
  border-radius: 50%;
-}
-
-
-#imageDisplay img {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 
