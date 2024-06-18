@@ -957,18 +957,17 @@ img {
 }
 
 .testimonial-modal {
+  padding: 0 1rem;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,.5);
+  inset: 0;
+  background-color: rgba(0, 0, 0, .5);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: var(--z-modal);
   opacity: 0;
-  visibility: hidden;   
-  transition: .3s ease;
+  visibility: hidden;
+  transition: .3s;
   border-color: var(--tertiary-color-light);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
   rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -1103,7 +1102,6 @@ input[type="text"] {
 
 .testimonial-description {
  margin-bottom: var(--mb-2-5);
- width: 45ch;
 }
 
 .testimonial-icone-star{
