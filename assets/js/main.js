@@ -90,8 +90,6 @@ tabButtons.forEach((button) => {
   });
 });
 
-
-
 /*==================== SERVICES MODAL ====================*/
 
 const modalElements = document.querySelectorAll('.services-modal');
@@ -114,15 +112,9 @@ closeElements.forEach((modalClose) => {
   });
 });
 
-
-
-
-
-
-
 /*==================== PORTFOLIO SWIPER  ====================*/
 
-const swiperPortifolio= new Swiper('.portfolio-container', {
+ new Swiper('.portfolio-container', {
   direction: 'horizontal',
   loop: true,
   // If we need pagination
@@ -138,9 +130,11 @@ const swiperPortifolio= new Swiper('.portfolio-container', {
   // And if we need scrollbar
   hide: true,
 });
+
+
 /*==================== TESTIMONIAL ====================*/
 
-var swiperTestimonial = new Swiper(".testimonial-container", {
+ new Swiper(".testimonial-container", {
   irection: 'horizontal',
   loop: true,
   pagination: {
