@@ -184,7 +184,31 @@ function scrollUp() {
   this.scrollY >= 500 ? scrollUp.classList.add('show-scroll') : scrollUp.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollUp)
+
 /*==================== DARK LIGHT THEME ====================*/ 
+const themeButton = document.querySelector('#theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'uil-sun';
+
+// selected topic ( if user selected)
+const selecedThem = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+
+//currently theme that the interface has by validating the dark-theme
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+selecedThem ? document.body.classList[selecedThem === 'dark' ? 'add' : 'remove'](darkTheme) : themeButton.classList[selecedThem === 'uil-moon' ? 'add' : 'remove']
+
+themeButton.addEventListener('click', () => {
+  //add or remove the dark/ icon theme
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+
+  //we save the theme and the current icon that the user chose
+  localStorage.setItem('selected-theme', getCurrentTheme());
+  localStorage.setItem('selected-icon', getCurrentIcon());
+})
 
 
 initAnimationEfects()

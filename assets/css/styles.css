@@ -6,10 +6,10 @@
 
     /*========== Colors ==========*/
 
-    --hue-color: 220; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 219; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
-    --primeira-cor: hsl(var(--hue-color), 69%, 61%);
+    --primeira-cor: hsl(var(--hue-color), 190%, 61%);
     --primeira-cor-seg: hsl(var(--hue-color), 69%, 61%);
     --primeira-cor-alt: hsl(var(--hue-color), 57%, 53%);
     --primeira-cor-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -70,6 +70,15 @@
 
 /*========== Variables Dark theme ==========*/
 
+body.dark-theme{
+  /* HSL color mode */
+  --primeira-cor-seg: hsl(var(--hue-color), 30%, 5%);
+  --titulo-cor: hsl(var(--hue-color), 8%, 95%);
+  --text-cor: hsl(var(--hue-color), 8%, 75%);
+  --input-cor: hsl(var(--hue-color), 29%, 16%);
+  --body-cor: hsl(var(--hue-color), 28%, 12%);
+  --container-cor: hsl(var(--hue-color), 28%, 16%);;
+}
 
 /*========== Button Dark/Light ==========*/
 .nav-btns {
@@ -78,8 +87,14 @@
 }
 
 .change-theme {
+  margin-right:  var(--mb-1);
   font-size: 1.25rem;
-  color: ;
+  color:var(--title-color);
+  cursor: pointer;
+}
+
+.change-theme:hover {
+  color: var(--primeira-cor);
 }
 
 /*==================== BASE ====================*/
@@ -282,7 +297,7 @@ img {
 
 
 .home-blob {
-  width: 350px;
+  width: 290px;
   fill: var(--primeira-cor);
 }
 
@@ -1064,6 +1079,9 @@ img {
   transition: .4s;
 }
 
+.scrollup:hover {
+  background: var(--primeira-cor-lighter);
+}
 .scrollup-icone{
   align-self: center;
   font-size: 1.7rem;
