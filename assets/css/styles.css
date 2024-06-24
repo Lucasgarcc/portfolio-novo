@@ -72,7 +72,15 @@
 
 
 /*========== Button Dark/Light ==========*/
+.nav-btns {
+  display: flex;
+  align-items: center;
+}
 
+.change-theme {
+  font-size: 1.25rem;
+  color: ;
+}
 
 /*==================== BASE ====================*/
 * {
@@ -233,10 +241,14 @@ img {
 }
 
 /* Active link */
-
+.active-link {
+  color: var(--primeira-cor);
+}
 
 /* Change background header */
-
+.scroll-header {
+  box-shadow:  0 -1px 4px  rgba(0, 0, 0, .16);
+}
 
 /*==================== HOME ====================*/
 .home-container {
@@ -247,6 +259,7 @@ img {
   padding-top: 3.5rem;
   grid-template-columns: .5rem 3fr;
   align-items: center;
+  gap: 5rem;
 }
 
 .home-social {
@@ -269,8 +282,7 @@ img {
 
 
 .home-blob {
-  margin-left: 1rem;
-  width: 280px;
+  width: 350px;
   fill: var(--primeira-cor);
 }
 
@@ -1036,10 +1048,33 @@ img {
 }
 
 /*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  inset: auto 1rem -20%  auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 30px;
+  box-shadow:  1px 0 1px  rgba(0, 0, 0, .16);
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  opacity: 1;
+  background: var(--primeira-cor);
+  transition: .4s;
+}
 
+.scrollup-icone{
+  align-self: center;
+  font-size: 1.7rem;
+  color: #fff;
+}
 
 /* Show scroll */
-
+.show-scroll {
+  bottom:  5rem;
+  right: 1.5rem;
+}
 
 /*========== SCROLL BAR ==========*/
 

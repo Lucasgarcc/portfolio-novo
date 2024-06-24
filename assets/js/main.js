@@ -149,13 +149,41 @@ closeElements.forEach((modalClose) => {
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
+const sections = document.querySelectorAll('section[id]');
+
+function scrollActive() {
+  const scrollY = window.scrollY || window.pageYOffset;
+
+  sections.forEach((section) => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 50;
+    const sectionId = section.getAttribute('id');
+
+    console.log('Section ID:', sectionId); // Verifique o valor de sectionId
+
+    const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+    if (navLink) {
+    scrollY > sectionTop && scrollY < sectionTop + sectionHeight ? navLink.classList.add('active-link') : navLink.classList.remove('active-link');
+    }  
+  });
+}
+
+window.addEventListener('scroll', scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 
+function scrollBackground() {
+  const nav = document.querySelector('.header');
+  this.scrollY >= 80 ? nav.classList.add('scroll-header') : nav.classList.remove('scroll-header'); 
+}
+window.addEventListener('scroll', scrollBackground);
 
 /*==================== SHOW SCROLL UP ====================*/ 
-
-
+function scrollUp() {
+  const scrollUp = document.querySelector('#scroll-up');
+  this.scrollY >= 500 ? scrollUp.classList.add('show-scroll') : scrollUp.classList.remove('show-scroll');
+}
+window.addEventListener('scroll', scrollUp)
 /*==================== DARK LIGHT THEME ====================*/ 
 
 
