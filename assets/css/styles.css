@@ -1117,6 +1117,7 @@ img {
     margin: auto var(--mb1)auto var(--mb1);
   }
   .nav-menu {
+    background-color: var(--primeira-cor);
    padding: 2rem .25rem 4rem; 
   }
   .nav-list {
