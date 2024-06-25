@@ -77,7 +77,9 @@ body.dark-theme{
   --text-cor: hsl(var(--hue-color), 8%, 75%);
   --input-cor: hsl(var(--hue-color), 29%, 16%);
   --body-cor: hsl(var(--hue-color), 28%, 12%);
-  --container-cor: hsl(var(--hue-color), 28%, 16%);;
+  --container-cor: hsl(var(--hue-color), 28%, 16%);
+  --scroll-bar-cor: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-cor: hsl(var(--hue-color), 12%, 80%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -262,7 +264,9 @@ img {
 
 /* Change background header */
 .scroll-header {
-  box-shadow:  0 -1px 4px  rgba(0, 0, 0, .16);
+  box-shadow:  0 -1px 4px  rgba(0, 0, 0, .6);
+  background: var(--container-cor);
+  opacity: .8;
 }
 
 /*==================== HOME ====================*/
@@ -274,7 +278,7 @@ img {
   padding-top: 3.5rem;
   grid-template-columns: .5rem 3fr;
   align-items: center;
-  gap: 5rem;
+  gap: 2.5rem;
 }
 
 .home-social {
@@ -297,7 +301,7 @@ img {
 
 
 .home-blob {
-  width: 290px;
+  width: 100%;
   fill: var(--primeira-cor);
 }
 
@@ -938,7 +942,7 @@ img {
 }
 
 .project-img {
-  width: 200px;
+  width: 230px;
   justify-self: center;
   filter: drop-shadow(1px 2px 20px var(--primeira-cor-lighter));
   z-index: 10
@@ -1044,10 +1048,7 @@ img {
   color: var(--primeira-cor-lighter);
 }
 
-.footer-socials {
-  display: flex;
-  justify-content: center;
-}
+
 
 .footer-social{
   margin-top: var(--mb-3);
@@ -1059,7 +1060,6 @@ img {
 .footer-copy {
   color:  var(--primeira-cor-lighter);
   font-size: var(--smaller-font-size);
-  text-align: center;
 }
 
 /*========== SCROLL UP ==========*/
@@ -1095,13 +1095,249 @@ img {
 }
 
 /*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+  width: .60rem;
+  background-color: var(--scroll-bar-cor);
+  border-radius: .5rem;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-cor);
+  border-radius:.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--texto-cor-light) ;
+}
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
+@media screen and (max-width: 390px) {
+  .contianer {
+    margin: auto var(--mb1)auto var(--mb1);
+  }
+  .nav-menu {
+   padding: 2rem .25rem 4rem; 
+  }
+  .nav-list {
+    column-gap: 0;
+  }
+  .home-content{
+    grid-template-columns: .25rem 3fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-blob {
+    width: 100%;
+  }
 
+  .skills-title {
+    font-size: var(--nomel-font-size);
+  }
+  .qualification-data {
+    gap: .5rem; 
+  }
+  .services-container{
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+  .services-modal {
+    padding: 0 .5rem;
+  }
+  .project-img {
+    width: 200px;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 568px) {
+  .home-content {
+    grid-template-columns: max-content 1fr 1fr;
+  }
+  .home-data {
+    grid-column: initial;
+  }
+  .home-img {
+    order: 1;
+    justify-content: center;
+  } 
+  .sobre-container,
+  .portfolio-content,
+  .project-container,
+  .contact-container,
+  .foooter-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sobre-description {
+    width: 45ch;
+  }
+  .skills-container {
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+  .qualification-sections {
+    display: grid;
+    grid-template-columns: .6fr;
+    justify-content: center;
+  }
+  .project-container {
+    align-items: center;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  .contianer {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 6rem 0 2rem;
+  }
+  .section-subtitle {
+    margin-bottom: 4rem;
+  }
+  .header {
+    top: 0;
+    bottom: initial;
+  }
+  .header,
+  .main,
+  .footer-container {
+    padding: 0 1rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 1rem;
+  }
+  .nav-icone,
+  .nav-close,
+  .nav-toggle {
+    display: none;
+  }
+  .nav-list {
+    display: flex;
+    column-gap:  2rem;
+  }
+  .nav-menu {
+    margin-left: auto;
+  }
+  .change-theme {
+    margin: 0;
+  }
+  .home-container {
+    padding-top: 5.5rem ;
+    column-gap:  2rem;
+  }
+  .home-scroll {
+    display: block;
+  }
+  .home-scroll-button {
+    margin-left: 3rem ;
+  }
+  .sobre-container {
+    column-gap: 1rem;
+  }
+  .container-img-sobre {
+    width: 320px;
+  }
+  .sobre-description {
+    text-align: initial;
+  }
+  .sobre-info {
+    justify-content: space-between;
+  }
+  .sobre-buttons {
+    justify-content:initial;
+  }
+  .qualification-tabs {
+    justify-content: center;
+  }
+  .qualification-button {
+    margin: 0 var(--mb-1);
+  }
+  .qualification-sections {
+    grid-template-columns: .5fr;
+  }
+  .services-container {
+    grid-template-columns:  repeat(3); /* <= 218*/
+    justify-content: center;
+  }
+  .services-icon {
+    font-size: 2rem;
+  }
+  .services-content {
+    padding: 6rem 0 2rem 2.5rem;
+  }
+  .services-modal-content {
+    width: 450px;
+  }
+  .portfolio-img {
+    align-items: center;
+  }
+  .project{
+    text-align: initial;
+  }
+  .project-bg {
+    background: none;
+  }
+  .project-container {
+    padding: 3rem 2.5rem 0;
+    background-color: var(--primeira-cor);
+    border-radius: 1rem;
+    grid-template-columns: 1fr max-content;
+    column-gap: 3rem;
+  }
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-bg {
+    padding: 3rem 0 3.5rem;
+  }
+  .footer-links {
+    margin-top: 1rem;
+    flex-direction: row;
+    column-gap:  2rem;
+  }
+  
+  .footer-copy {
+    margin-left: 2rem;
+  }
+ 
+}
 
 /* For large devices */
+@media screen and (min-width: 1024px) {
+  .header,
+  .main,
+  .footer {
+    padding: 0;
+  }
+  .container  {
+    margin:  0 auto;
+  }
+  .home-container {
+    column-gap: 5rem;
+  }
+  .home-blob {
+    width: 390px;
+  }
+  .home-social{
+    transform:  translateX(-6rem);
+  }
+  .container-img-sobre {
+    width: 450px;
+  }
+  .services-container {
+    grid-template-columns: repeat(3); /* 238px */
+  }
+  .portfolio-content {
+    column-gap: 5rem;
+  }
+  .swiper-portfolio-icone {
+    font-size: 2.5rem;
+  }
+
+}
