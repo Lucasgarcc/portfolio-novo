@@ -34,8 +34,7 @@ const open = 'skills-open', close = 'skills-close';
 
 function skillsAction() {
   const item = this.parentNode;
-
-  console.log(item)
+  
   // Remover a classe 'skills-open' de todos os elementos
   for (let i = 0; i < content.length; i++) {
     content[i].classList.remove(open);
