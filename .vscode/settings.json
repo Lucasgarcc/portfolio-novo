@@ -1,17 +1,13 @@
 {
   "git.ignoreLimitWarning": true,
-  "terminal.integrated.automationProfile.linux": { 
-    
-  },
+  "terminal.integrated.automationProfile.linux": {},
   "terminal.integrated.automationProfile.windows": {
-
-  "color": "terminal.ansiWhite"
+    "color": "terminal.ansiWhite"
   },
   "terminal.integrated.customGlyphs": true,
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.fontFamily": "'MesloLGS NF'",
   "terminal.integrated.profiles.windows": {
-
     "PowerShell": {
       "source": "PowerShell",
       "icon": "terminal-powershell"
@@ -21,7 +17,7 @@
         "${env:windir}\\Sysnative\\cmd.exe",
         "${env:windir}\\System32\\cmd.exe"
       ],
-      "args": [],
+      "args": []
     },
     "Git Bash": {
       "source": "Git Bash"
@@ -30,5 +26,6 @@
   "files.autoSave": "afterDelay",
   "terminal.explorerKind": "external",
   "terminal.integrated.fontSize": 13,
-  "editor.fontFamily": " 'MesloLGS NF'"
+  "editor.fontFamily": " 'MesloLGS NF'",
+  "liveServer.settings.port": 5501
 }
