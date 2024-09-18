@@ -146,28 +146,49 @@ closeElements.forEach((modalClose) => {
   },
 });
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+/*==================== SCROLL SMOOTH ====================*/
+const navLinks = document.querySelectorAll('[data-menu="smooth"] a[href^="#"]');
 
+function scrollSmooth(e) {
+  e.preventDefault(); // Evita o comportamento padrão de rolagem
+
+  const href = this.getAttribute('href'); // Obtém o href do link clicado
+  const section = document.querySelector(href);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', scrollSmooth);
+});
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
   const scrollY = window.scrollY || window.pageYOffset;
 
-  sections.forEach((section) => {
+  sections.forEach(section => {
     const sectionHeight = section.offsetHeight;
     const sectionTop = section.offsetTop - 50;
     const sectionId = section.getAttribute('id');
 
-    console.log('Section ID:', sectionId); // Verifique o valor de sectionId
-
-    const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+    const navLink = document.querySelector('[data-menu="smooth"] a[href="#' + sectionId + '"]');
     if (navLink) {
-    scrollY > sectionTop && scrollY < sectionTop + sectionHeight ? navLink.classList.add('active-link') : navLink.classList.remove('active-link');
-    }  
+      scrollY > sectionTop && scrollY < sectionTop + sectionHeight 
+        ? navLink.classList.add('active-link') 
+        : navLink.classList.remove('active-link');
+    }
   });
 }
 
 window.addEventListener('scroll', scrollActive);
+
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 
