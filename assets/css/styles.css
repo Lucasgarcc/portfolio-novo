@@ -1090,6 +1090,20 @@ img {
   right: 1.5rem;
 }
 
+/* Anima Scroll */
+
+.js [data-anima="scroll"]  {
+  opacity: 0;
+  transform:  translate3d(-30px, 0, 0);
+  transition: .5s ease-out;
+}
+
+.js [data-anima="scroll"].active {
+  opacity: 1;
+  transform:  translate3d(0, 0, 0);
+  transition: .5s;
+}
+
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
   width: .60rem;
@@ -1114,7 +1128,7 @@ img {
   }
   .nav-menu {
     background-color: var(--primeira-cor);
-   padding: 2rem .25rem 4rem; 
+    padding: 2rem .25rem 4rem; 
   }
   .nav-list {
     column-gap: 0;
