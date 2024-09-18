@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-   
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    document.documentElement.className += ' js';
+    //codigo de prevenção de caso js não esteja habilitado
+  </script>
   <title>Portifolio Garcia</title>
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 <link rel="icon" type="image/png" href="/assets/img/favicon.svg">
@@ -19,7 +22,7 @@
       <div class="nav-menu" data-menu="smooth" id="nav-menu">
         <ul class="nav-list grid">
           <li class="nav-item">
-            <a href="#home" class="nav-link active-link">
+            <a href="#home" class="nav-link active">
               <i class="uil uil-estate nav-icone"></i>Inicio
             </a>
           </li>
@@ -59,10 +62,10 @@
       </div>
   </header>
   <main class="main">
-    <section class="home section" id="home">
+    <section class="home section" data-anima="scroll" id="home">
     <div class="home-container container grid">
       <div class="home-content grid">
-        <div class="home-social">
+        <div class="home-social" data-anima="scroll">
           <a href="https://www.linkedin.com/in/lucas-garcia-l/" target="_blank" class="home-social-icone">
             <i class="uil uil-linkedin-alt"></i>
           </a>
@@ -105,7 +108,7 @@
           </a>
         </div>
       </div>
-      <div class="home-scroll">
+      <div class="home-scroll" >
         <a href="#sobre" class="home-scroll-button button--flex">
           <i class="uil uil-mouse-alt home-scroll-mouse"></i>
           <span class="home-scroll-name">Role Para... </span>
@@ -114,7 +117,7 @@
       </div>
     </div>
   </section>
-    <section class="sobre section" id="sobre">
+    <section class="sobre section" data-anima="scroll" id="sobre">
       <h2 class="section-title">Sobre Mim</h2>
       <span class="section-subtitle">Minha Introdução</span>
       <div class="sobre-container container grid">
@@ -148,7 +151,7 @@
         </div>
       </div>
     </section>
-    <section class="skills section" id="skills">
+    <section class="skills section" data-anima="scroll" id="skills">
       <h2 class="section-title">Habilidades</h2>
       <span class="section-subtitle">Meu Nivél Tecnico</span>
       <div class="skills-container container grid">
@@ -170,7 +173,7 @@
                         <path d="M0.733336 0.766667V0C0.528258 0 0.332548 0.0897764 0.193689 0.247549C0.0548284 0.405323 -0.0144953 0.616676 0.00253546 0.830335L0.733336 0.766667ZM21.2667 0.766667L21.9975 0.830335C22.0145 0.616676 21.9451 0.405323 21.8063 0.247549C21.6675 0.0897764 21.4717 0 21.2667 0V0.766667ZM19.8 19.1667L20.0319 19.8939C20.3103 19.797 20.5065 19.5359 20.5308 19.2303L19.8 19.1667ZM11 22.2333L10.7681 22.9606C10.9186 23.0132 11.0814 23.0132 11.2319 22.9606L11 22.2333ZM2.2 19.1667L1.46921 19.2303C1.49357 19.5359 1.68981 19.797 1.96811 19.8939L2.2 19.1667ZM6.6 5.36667V4.6H5.86667V5.36667H6.6ZM6.6 9.96667H5.86667V10.7333H6.6V9.96667ZM15.4 9.96667H16.1333V9.2H15.4V9.96667ZM15.4 14.5667L15.6319 15.294L16.1333 15.1192V14.5667H15.4ZM11 16.1L10.7681 16.8273L11 16.9081L11.2319 16.8273L11 16.1ZM6.6 14.5667H5.86667V15.1192L6.36811 15.294L6.6 14.5667ZM0.733336 1.53333H21.2667V0H0.733336V1.53333ZM20.5358 0.702998L19.0692 19.103L20.5308 19.2303L21.9975 0.830335L20.5358 0.702998ZM19.5681 18.4394L10.7681 21.5061L11.2319 22.9606L20.0319 19.8939L19.5681 18.4394ZM11.2319 21.5061L2.4319 18.4394L1.96811 19.8939L10.7681 22.9606L11.2319 21.5061ZM2.9308 19.103L1.46414 0.702998L0.00253546 0.830335L1.46921 19.2303L2.9308 19.103ZM16.1333 4.6H6.6V6.13333H16.1333V4.6ZM5.86667 5.36667V9.96667H7.33333V5.36667H5.86667ZM6.6 10.7333H15.4V9.2H6.6V10.7333ZM14.6667 9.96667V14.5667H16.1333V9.96667H14.6667ZM15.1681 13.8393L10.7681 15.3727L11.2319 16.8273L15.6319 15.294L15.1681 13.8393ZM11.2319 15.3727L6.8319 13.8393L6.36811 15.294L10.7681 16.8273L11.2319 15.3727ZM7.33333 14.5667V12.2667H5.86667V14.5667H7.33333Z" fill="#5785E0"/>
                         </svg>
                     </h3>
-                    <spna class="skills-number">99%</spna>
+                    <span class="skills-number">99%</span>
                   </dv>
                   <div class="skills-bar">
                     <span class="skills-porcentage skills-html"></span>
@@ -303,7 +306,7 @@
         </div>
       </div>
     </section>
-    <section class="qualification section">
+    <section class="qualification section" data-anima="scroll">
       <h2 class="section-title">Qualificações</h2>
       <span class="section-subtitle">Minha jornada pessoal</span>
       <div class="qualification-container container">
@@ -399,7 +402,7 @@
           </div>
         
     </section>
-    <section class="services section" id="services">
+    <section class="services section" data-anima="scroll" id="services">
       <h2 class="section-title">Serviços</h2>
       <span class="section-subtitle">O que ofereço ?</span>
       <div class=" services-container container grid">
@@ -477,7 +480,7 @@
         </div> 
       </div>
     </section>
-    <section class="portfolio section" id="portfolio">
+    <section class="portfolio section" data-anima="scroll" id="portfolio">
       <h2 class="section-title">Portfólio</h2>
       <span class="section-subtitle">Meus projetos recentes</span>
       <div class="portfolio-container container swiper-container" navigation="true" pagination="true" scrollbar="true">
@@ -519,7 +522,7 @@
         <div class="swiper-pagination"></div>
       </div>
     </section>
-    <section class="project section" >
+    <section class="project section" data-anima="scroll" >
       <div class="project-bg">
         <div class="project-container container grid">
           <div class="project-data">
@@ -537,7 +540,7 @@
 
       </div>
     </section>
-    <section class="contact section" id="contact">
+    <section class="contact section" data-anima="scroll" id="contact">
       <h2 class="section-title">Contato</h2>
       <span class="section-subtitle">entrar em contato.</span>
         <div class="contact-container container grid">

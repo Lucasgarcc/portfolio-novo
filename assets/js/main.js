@@ -181,8 +181,8 @@ function scrollActive() {
     const navLink = document.querySelector('[data-menu="smooth"] a[href="#' + sectionId + '"]');
     if (navLink) {
       scrollY > sectionTop && scrollY < sectionTop + sectionHeight 
-        ? navLink.classList.add('active-link') 
-        : navLink.classList.remove('active-link');
+        ? navLink.classList.add('active') 
+        : navLink.classList.remove('active');
     }
   });
 }
@@ -190,11 +190,55 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive);
 
 
+/*==================== ANIMA SCROLL ====================*/ 
+
+const sectionsScroll = document.querySelectorAll('[data-anima="scroll"]');
+const windowView = window.innerHeight * 0.5;
+const active  = 'active';
+
+// variavel pega valor do window html atraves da prorpriedade
+// innerHeight multiplicado por 60% da tela.
+
+function animaScroll () {
+  sectionsScroll.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const isSectionVIsible = sectionTop - windowView <= 0;
+  // concatena a variavel -[section] a o metodo que pega,
+
+    if (isSectionVIsible) {
+      // varifica se valor do scroll da pagina for maior que zero.
+        section.classList.add(active);
+    } else  {
+      section.classList.remove(active);
+    }
+  });
+}
+
+if (sectionsScroll.length) {
+  animaScroll();
+  window.addEventListener('scroll', animaScroll);
+}
+
+
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 
 function scrollBackground() {
   const nav = document.querySelector('.header');
-  this.scrollY >= 80 ? nav.classList.add('scroll-header') : nav.classList.remove('scroll-header'); 
+  // Adiciona a classe 'scroll-header' quando a rolagem é maior que 90% da altura da viewport
+
+  window.scrollY >= 80 ? 
+  nav.classList.add('scroll-header') 
+  : nav.classList.remove('scroll-header');
+
+  // Verifica se a largura da viewport é menor ou igual a 390px
+  if (window.matchMedia('(max-width: 400px)').matches) {
+    // Se estiver em dispositivos menores, a classe é sempre adicionada ao rolar qualquer valor
+    if (window.scrollY >= 0) {
+      nav.classList.add('scroll-header');
+    } else {
+      nav.classList.remove('scroll-header');
+    }
+  }
 }
 window.addEventListener('scroll', scrollBackground);
 
