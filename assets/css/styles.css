@@ -106,7 +106,7 @@ body.dark-theme{
   margin: 0;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
 }
 
@@ -136,9 +136,10 @@ img {
   height: auto;
 }
 
-/*==================== REUSABLE CSS CLASSES ====================*/
+/*==================== CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
+  min-height: 100vh;
 }
 
 .section-subtitle {
@@ -298,8 +299,6 @@ img {
   opacity: 0.5;
 }
 
-
-
 .home-blob {
   width: 100%;
   fill: var(--primeira-cor);
@@ -395,7 +394,6 @@ img {
   background-color: var(--primeira-cor-lighter); 
 }
 
-
 .button--link {
   padding: 0;
   background-color: transparent;
@@ -407,7 +405,6 @@ img {
   color: var(--primeira-cor-alt);
 }
 
-
 /*==================== ABOUT ====================*/
 
 .container-img-sobre {
@@ -415,7 +412,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .sobre-img {
