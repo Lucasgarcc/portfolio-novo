@@ -136,6 +136,11 @@ img {
   height: auto;
 }
 
+button {
+  border: none;
+  background: transparent;
+}
+
 /*==================== CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
@@ -421,7 +426,11 @@ img {
   min-width: 100%;
   animation: floating 4s ease-in-out infinite;
 }
-  
+
+.visually-hidden {
+  overflow: hidden;
+}
+
 @keyframes floating {
   0% {
     transform: translateY(0);
@@ -556,6 +565,7 @@ img {
 .skills-arrow{
   font-size: 1.8rem;
   color: var(--primeira-cor);
+  transition: .3s;
 }
 
 .skills-icon {
@@ -581,6 +591,11 @@ img {
   margin-left: auto ;
   transition: .4s;
 }
+
+.skills-arrow:hover {
+  transform: translateY(.25rem);
+}
+
 
 .skills-titles{
   margin-bottom: var(--mb-0-5);
@@ -618,15 +633,15 @@ img {
 }
 
 .skills-js, .skills-figma {
-  width: 50%;
+  width: 90%;
 }
 
 .skills-react, .skills-node {
-  width: 20%;
+  width: 50%;
 }
 
 .skills-git {
-  width: 70%;
+  width: 80%;
 }
 
 .skills-postgre, .skills-ui {
