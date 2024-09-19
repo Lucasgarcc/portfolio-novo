@@ -51,7 +51,6 @@ header.forEach((item) => item.addEventListener('click', skillsAction));
 
 /*==================== QUALIFICATION TABS ====================*/
 
-
 const tabs = document.querySelectorAll('[data-target]');
 const tabContents = document.querySelectorAll('[data-content]');
 const tabButtons = document.querySelectorAll('.qualification-button');
@@ -77,8 +76,8 @@ tabButtons.forEach((button) => {
     // Remover a classe 'qualification-active' de todos os botões
     tabButtons.forEach((btn) => {
       btn.classList.toggle(activeTab);
-      btn.style.backgroundColor = 'white'; // Cor de fundo padrão
-      btn.style.color = '#232529';
+      btn.style.backgroundColor = 'var(--body-cor)';; // Cor de fundo padrão
+      btn.style.color = 'var(--text-cor)';
     });
 
     // Adicionar a classe 'qualification-active' ao botão clicado
