@@ -24,7 +24,8 @@
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
-
+    --title-font: "Gugi", sans-serif;
+    ---title-heigth: 200;
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
@@ -160,6 +161,8 @@ button {
 
 .section-title, 
 .section-subtitle {
+  font-family: var(--title-font);
+  font-weight: var(--title-font);
   text-align: center;
 }
 
@@ -185,6 +188,10 @@ button {
 }
 
 /*==================== NAV ====================*/
+
+#logo {
+  color: var(--primeira-cor-seg)
+}
 
 .nav {
   max-width: 968px;
@@ -324,7 +331,10 @@ button {
 }
 
 .home-title {
+  font-family: var(--title-font);
+  font-weight: var(---title-heigth);
   font-size: var(--big-font-size);
+  font-style: normal;
 }
 
 .home-subtitle::before{
@@ -977,10 +987,6 @@ button {
   z-index: 10
 }
 
-/*==================== TESTIMONIAL ====================*/
-
-
-
 /*==================== CONTACT ME ====================*/
 
 .contact-container {
@@ -1050,6 +1056,8 @@ button {
 }
 
 .footer-title {
+  font-family: var(--title-font);
+  font-weight: var(---title-heigth);
   margin-bottom: var(--mb-0-25);
   font-size: var(--h1-font-size);
 }
