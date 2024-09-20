@@ -13,7 +13,7 @@
     --primeira-cor-seg: hsl(var(--hue-color), 69%, 61%);
     --primeira-cor-alt: hsl(var(--hue-color), 57%, 53%);
     --primeira-cor-lighter: hsl(var(--hue-color), 92%, 85%);
-    --titulo-cor: hsl(var(--hue-color), 8%, 15%);
+    --titulo-cor: hsl(var(--hue-color), 8%, 25%);
     --texto-cor: hsl(var(--hue-color), 8%, 45%);
     --texto-cor-light: hsl(var(--hue-color), 8%, 65%);
     --input-cor: hsl(var(--hue-color), 70%, 96%);
@@ -287,6 +287,7 @@ button {
   gap: 2.5rem;
 }
 
+
 .home-social {
   display: grid;
   grid-template-columns: max-content;
@@ -309,6 +310,11 @@ button {
   fill: var(--primeira-cor);
 }
 
+
+.home-img {
+    animation: floating 4s ease-in-out infinite;
+}
+
 .home-blob-img {
    width: 170px;
 }
@@ -321,10 +327,21 @@ button {
   font-size: var(--big-font-size);
 }
 
+.home-subtitle::before{
+  content: '< ';
+  font-size: .9rem;
+  color: var(--primeira-cor);
+}
+
+.home-subtitle::after{
+  content: '/>';
+  font-size: .8rem;
+  color: var(--primeira-cor);
+}
+
 .home-subtitle {
   margin-bottom: var(--mb-0-75);
   font-size: var(--h3-font-size);
-  color: var(--text-cor);
   font-weight: var(--font-medium);
 }
 
@@ -680,6 +697,7 @@ button {
 .qualification-button {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
+  color: var(--text-cor);
   cursor: pointer;
 }
 

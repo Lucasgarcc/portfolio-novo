@@ -110,7 +110,7 @@ closeElements.forEach((modalClose) => {
   });
 });
 
-/*==================== PORTFOLIO SWIPER  ====================*/
+/*==================== PORTFOLIO SWIPER ====================*/
 
  new Swiper('.portfolio-container', {
   direction: 'horizontal',
@@ -127,22 +127,6 @@ closeElements.forEach((modalClose) => {
   },
   // And if we need scrollbar
   hide: true,
-});
-
-
-/*==================== TESTIMONIAL ====================*/
-
- new Swiper(".testimonial-container", {
-  irection: 'horizontal',
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 });
 
 /*==================== SCROLL SMOOTH ====================*/
@@ -218,7 +202,6 @@ if (sectionsScroll.length) {
   window.addEventListener('scroll', animaScroll);
 }
 
-
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 
 function scrollBackground() {
@@ -273,6 +256,22 @@ themeButton.addEventListener('click', () => {
   localStorage.setItem('selected-icon', getCurrentIcon());
 })
 
+/*==================== TYPEWRITER ANIMATION ====================*/
+
+const title = document.querySelector('.home-title');
+const detail = document.querySelector('.detail')
+
+function typeWrite(element) {
+  const textArray = element.innerHTML.split('');
+  const textDetail = element.innerHTML.split('');
+  element.innerHTML = '';
+  textArray.forEach((item, index) => {
+    setTimeout(() => element.innerHTML += item, 140 * index );
+  });
+
+}
+
+typeWrite(title);
 
 initAnimationEfects()
 
