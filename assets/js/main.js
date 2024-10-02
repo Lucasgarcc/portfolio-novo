@@ -1,5 +1,35 @@
 
 import initAnimationEfects from "../js/animation.js";
+import Validation from "../js/validation.js";
+
+/*==================== VALIDATION FORM ====================*/
+
+const name = document.querySelector('#name');
+console.log(name);
+const validateName =  new Validation(name).init();
+
+
+const email = document.querySelector('#email');
+console.log(email);
+const validateEmail =  new Validation(email).init();
+console.log(validateEmail);
+
+const project = document.querySelector('#project');
+const validateProject = new Validation(project).init();
+
+const message = document.querySelector('#message');
+const validateMessage = new Validation(message).init();
+
+
+const form = document.querySelector('#form');
+
+console.log(form)
+
+const formValidation = new Validation(form).init();
+
+
+
+
 
 
 /*==================== MENU SHOW Y HIDDEN ====================*/

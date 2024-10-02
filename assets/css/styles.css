@@ -1015,16 +1015,10 @@ button {
 }
 
 .contact-content {
-  padding: .75rem 1rem .25rem  ;
+  padding: .75rem .5rem 1rem .5rem  ;
   background-color: var(--input-cor);
   border-radius: .5rem;
 }
-
-.contact-label {
-  font-size: var(--smaller-font-size);
-  color: var(--titulo-cor);
-}
-
 .contact-input {
   padding: .25rem .5rem .5rem 0;
   width: 100%;
@@ -1036,8 +1030,123 @@ button {
   outline: none;
 }
 
+.contact-label {
+  font-size: var(--smaller-font-size);
+  color: var(--titulo-cor);
+}
+
+
 .button-form {
   justify-self: flex-start;
+  cursor: pointer;
+}
+
+.button-form:focus {
+  border-color: var(--primeira-cor-seg);
+}
+
+
+/*==================== VALIDATION ====================*/
+
+input.error {
+  padding: .5rem;
+  background-color: #ff8981;
+  border-radius: .5rem ;
+}
+.contact-input.valid {
+  padding: .5rem;
+  background-color: rgb(189, 252, 201);
+  border-radius: .5rem ;
+}
+
+
+.span-error {
+  display: none;
+  margin-top: -5%;
+  color: #ff1000;
+  font-size: .875rem;
+  text-align: center;
+  border-radius: .1rem;
+}
+
+.span-error.active {
+  display: block;
+}
+
+.popup-overlay {
+  margin: 0 auto;
+  display: none; /* Inicialmente escondido */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70%; /* Cobrir toda a tela */
+/* Fundo semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Colocar atrás do popup */
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.3s ease; /* Transição suave */
+}
+
+.popup-overlay.active {
+  display: flex; /* Exibe o overlay quando ativo */
+  opacity: 1; /* Visível */
+}
+
+.popup-content {
+  background-color: #ff8981;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: tranform 0.6s ease;
+  transform: translateY(100%);
+  transition: transform 0.6s ease forwards;
+  animation: show-down .6s forwards;
+}
+
+.popup-overlay.active .popup-content {
+  opacity: 1; /* Sobe até metade da tela */
+  animation: show-down .7s forwards;
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d( 0, -40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.popup-close {
+  position: absolute;
+  inset: -3rem 0 0 38rem;
+  background-color: var(--primeira-cor-seg);
+}
+
+.popup-content.success {
+  background-color: lightgreen;
+  color: black; /* Cor do texto no popup */
+  transform: translateY(-60%);
+}
+
+.popup-content.success .popup-close {
+  display: none;
+}
+
+/* Cor do popup de erro */
+.popup-content.error {
+  background-color: lightcoral;
+  color: white;
+}
+
+/* Fechar o popup depois de 3 segundos se for sucesso */
+.popup-overlay.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 /*==================== FOOTER ====================*/
@@ -1162,8 +1271,21 @@ button {
 }
 
 /*==================== MEDIA QUERIES ====================*/
+
+@media screen and (max-width: 600px) {
+  .popup-content {
+    width: 85%;
+  }
+  .popup-close {
+    position: relative;
+    inset: -8rem 0 0 12.7rem;
+    background-color: transparent;
+  }
+  
+} 
+
 /* For small devices */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 420px) {
   .contianer {
     margin: auto var(--mb1)auto var(--mb1);
   }
@@ -1199,7 +1321,20 @@ button {
   .project-img {
     width: 200px;
   }
+  .popup-content {
+    margin: 0 auto;
+    padding-top: 2.5em;
+    font-size: .7rem;
+    width: 80%;
+
+  }
+  .popup-close {
+    position: relative;
+    inset: -9rem 0 0 9rem;
+    background-color: transparent;
+  }
 }
+
 
 /* For medium devices */
 @media screen and (min-width: 568px) {
