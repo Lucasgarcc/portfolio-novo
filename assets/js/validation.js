@@ -22,10 +22,10 @@ export default class Validation {
 
   showPopup(message, isSuccess) {
     
-       // Verificar se o popup já existe
+    // Verificar se o popup já existe
     const existingOverlay = document.querySelector('.popup-overlay');
     if (existingOverlay) {
-        existingOverlay.remove(); // Remover o popup existente antes de criar um novo
+      existingOverlay.remove(); // Remover o popup existente antes de criar um novo
     }
 
     // Criar o fundo do popup
@@ -78,7 +78,7 @@ export default class Validation {
     // Adicionar a classe 'active' para mostrar o popup
     requestAnimationFrame(() => {
       overlay.classList.add('active');
-       // Usar requestAnimationFrame para garantir que a classe seja adicionada após o DOM ser atualizado
+      // Usar requestAnimationFrame para garantir que a classe seja adicionada após o DOM ser atualizado
     });
 
     if (isSuccess) {
