@@ -447,14 +447,16 @@ button {
 }
 
 .sobre-img {
-  margin: 0 auto;
+  margin: 0px 103px auto;
   justify-self: center;
-  align-self: center;  
-  min-width: 100%;
+  align-self: center;
+  max-width: 74%;
   animation: floating 4s ease-in-out infinite;
 }
 
 .visually-hidden {
+  color: var(--body-cor);
+  opacity: 0;
   overflow: hidden;
 }
 
