@@ -319,11 +319,11 @@ button {
 
 
 .home-img {
-    animation: floating 4s ease-in-out infinite;
+  animation: floating 4s ease-in-out infinite;
 }
 
 .home-blob-img {
-   width: 110%;
+   width: 90%;
 }
 
 .home-data {
@@ -982,13 +982,17 @@ button {
   margin-bottom: var(--mb-1-5);
 }
 
-.project-img {
+.project-img, .video-desig {
   width: 230px;
   justify-self: center;
   filter: drop-shadow(1px 2px 20px var(--primeira-cor-lighter));
   z-index: 10
 }
 
+.video-design {
+  width: 250px;
+  height: 60%;
+}
 /*==================== CONTACT ME ====================*/
 
 .contact-container {
